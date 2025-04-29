@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Shawarma Queen's delicious menu featuring authentic shawarma, kebabs, falafel, salads, and more. Vegetarian, gluten-free, and dairy-free options available.">
+    <meta name="keywords" content="shawarma menu, kebab menu, mediterranean food, middle eastern cuisine, donair, falafel, hummus, poutine, vegetarian options">
+    <title>Shawarma Queen - Menu</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #C42126;
+            --secondary-color: #F5F5F5;
+            --accent-color: #4CAF50;
+            --dark-text: #333;
+            --light-text: #fff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Menu Page Styles */
+        .menu-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/300') center/cover no-repeat;
+            color: var(--light-text);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .menu-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .menu-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .menu-nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .menu-categories a {
+            color: var(--dark-text);
+            text-decoration: none;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            background-color: #f1f1f1;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .menu-categories a:hover, .menu-categories a.active {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+        
+        .menu-section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .diet-legend {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .diet-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        
+        .diet-item i {
+            color: var(--accent-color);
+            margin-right: 5px;
+        }
+        
+        .menu-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--light-text);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #9b1a1e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            nav a, .menu-categories a {
+                padding: 8px 15px;
+                margin: 3px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .menu-header h1 {
+                font-size: 2rem;
+            }
+            
+            .menu-header {
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .menu-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu-categories a {
+                width: 80%;
+                text-align: center;
+                margin: 3px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/Images/ShawarmaQueenLogo.jpg" alt="Shawarma Queen Logo">
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="menu.html" class="active">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our authentic Mediterranean dishes made with fresh ingredients and traditional recipes.</p>
+        </div>
+    </section>
+
+    <div class="menu-nav">
+        <div class="container">
+            <div class="menu-categories">
+                <a href="#appetizers-salads" class="active">Appetizers & Salads</a>
+                <a href="#wraps-subs">Wraps & Subs</a>
+                <a href="#entrees">Entrees</a>
+                <a href="#bowls">Bowls</a>
+                <a href="#sides-desserts">Sides, Kids & Desserts</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="diet-legend">
+            <div class="diet-item">
+                <i class="fas fa-circle"></i> Vegetarian
+            </div>
+            <div class="diet-item">
+                <i class="fas fa-wheat-awn-circle-exclamation"></i> Gluten Free
+            </div>
+            <div class="diet-item">
+                <i class="fas fa-cow"></i> Dairy Free
+            </div>
+        </div>
+
+        <section id="appetizers-salads" class="menu-section">
+            <h2 class="section-title">Appetizers & Salads</h2>
+            <img src="/images/MenuImage1.jpg" alt="Appetizers and Salads Menu" class="menu-image">
+        </section>
+
+        <section id="wraps-subs" class="menu-section">
+            <h2 class="section-title">Wraps & Subs</h2>
+            <img src="/images/MenuImage2.jpg" alt="Wraps & Subs Menu" class="menu-image">
+        </section>
+
+        <section id="entrees" class="menu-section">
+            <h2 class="section-title">Entrees</h2>
+            <img src="/images/MenuImage3.jpg" alt="Entrees Menu" class="menu-image">
+        </section>
+
+        <section id="bowls" class="menu-section">
+            <h2 class="section-title">Bowls</h2>
+            <img src="/images/MenuImage4.jpg" alt="Bowls Menu" class="menu-image">
+        </section>
+
+        <section id="sides-desserts" class="menu-section">
+            <h2 class="section-title">Sides, Kids & Desserts</h2>
+            <img src="/images/MenuImage5.jpg" alt="Sides, Kids and Desserts Menu" class="menu-image">
+        </section>
+    </div>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-yelp"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </div>
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear());</script> Shawarma Queen. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active class
+                    document.querySelectorAll('.menu-categories a').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Highlight active menu category based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('.menu-section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    const targetId = '#' + section.getAttribute('id');
+                    
+                    document.querySelectorAll('.menu-categories a').forEach(item => {
+                        item.classList.remove('active');
+                        
+                        if (item.getAttribute('href') === targetId) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

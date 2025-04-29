@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Shawarma Queen's story, our commitment to authentic Mediterranean cuisine, and the passion behind our delicious food.">
+    <meta name="keywords" content="shawarma restaurant, middle eastern cuisine, mediterranean restaurant, shawarma queen, authentic shawarma">
+    <title>Shawarma Queen - About Us</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #C42126;
+            --secondary-color: #F5F5F5;
+            --accent-color: #4CAF50;
+            --dark-text: #333;
+            --light-text: #fff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/300') center/cover no-repeat;
+            color: var(--light-text);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Page Styles */
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Our Values Section */
+        .values-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 60px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .member-info p.role {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #777;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .testimonials-section .section-title {
+            color: var(--light-text);
+        }
+        
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--light-text);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                padding: 8px 15px;
+                margin: 3px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header {
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/Images/ShawarmaQueenLogo.jpg" alt="Shawarma Queen Logo">
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About Shawarma Queen</h1>
+            <p>Our story, our passion, and our commitment to authentic Mediterranean cuisine.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Shawarma Queen was founded in 2010 with a simple mission: to bring authentic, flavorful Mediterranean cuisine to our community. What started as a small family-owned restaurant has grown into a beloved local institution, known for our commitment to quality and tradition.</p>
+                    <p>Our recipes have been passed down through generations, bringing the true flavors of the Middle East to your table. Every dish is prepared with care, using only the freshest ingredients and traditional cooking methods.</p>
+                    <p>The secret to our success? Our vertical rotisseries, where we slow-cook our specially marinated meats to juicy perfection. Our signature shawarma, with its perfect balance of spices and tender texture, has become a customer favorite and the cornerstone of our menu.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/500/300" alt="Shawarma Queen Restaurant Interior">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/api/placeholder/500/300" alt="Shawarma Queen Chef Preparing Food">
+                </div>
+                <div class="about-text">
+                    <p>At Shawarma Queen, we believe that food is more than just sustenance—it's an experience that brings people together. Our restaurant is designed to be a warm, welcoming space where friends and families can gather to enjoy delicious food and create lasting memories.</p>
+                    <p>We take pride in offering a diverse menu that caters to various dietary preferences, including vegetarian, gluten-free, and dairy-free options. Everyone deserves to enjoy the rich flavors of Mediterranean cuisine, regardless of dietary restrictions.</p>
+                    <p>As we continue to grow, our commitment to quality, authenticity, and customer satisfaction remains unwavering. We're grateful for the support of our loyal customers and look forward to serving you for many years to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Quality Ingredients</h3>
+                    <p>We source only the freshest, highest-quality ingredients for our dishes, ensuring that every bite is flavorful and nutritious.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Authentic Recipes</h3>
+                    <p>Our traditional recipes have been perfected over generations, bringing the true taste of Mediterranean cuisine to your table.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We're proud to be a gathering place for our community, where people can come together to enjoy good food and good company.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>We pour our hearts into every dish we prepare, driven by our passion for sharing delicious food with our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Chef Mohammad">
+                    <div class="member-info">
+                        <h3>Mohammad Ali</h3>
+                        <p class="role">Head Chef & Owner</p>
+                        <p>With over 20 years of culinary experience, Chef Mohammad brings authentic flavors and cooking techniques straight from his homeland.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Chef Layla">
+                    <div class="member-info">
+                        <h3>Layla Hasan</h3>
+                        <p class="role">Pastry Chef</p>
+                        <p>Layla is the mastermind behind our delicious desserts, including our famous homemade baklava.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/300/300" alt="Manager Ahmed">
+                    <div class="member-info">
+                        <h3>Ahmed Khalil</h3>
+                        <p class="role">Restaurant Manager</p>
+                        <p>Ahmed ensures that every customer has a fantastic dining experience, from the moment they walk in until they leave.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"Shawarma Queen is my go-to spot for authentic Mediterranean food. The flavors are incredible, and the staff always makes me feel like family. I especially love their chicken shawarma plate!"</p>
+                <div class="author">- Sarah M.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-yelp"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </div>
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear());</script> Shawarma Queen. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Testimonial slider
+        const testimonials = [
+            {
+                text: "Shawarma Queen is my go-to spot for authentic Mediterranean food. The flavors are incredible, and the staff always makes me feel like family. I especially love their chicken shawarma plate!",
+                author: "Sarah M."
+            },
+            {
+                text: "I've traveled throughout the Middle East, and I can honestly say that Shawarma Queen serves some of the most authentic Mediterranean cuisine I've had outside the region. Their attention to detail and quality is impressive.",
+                author: "Michael T."
+            },
+            {
+                text: "As someone with dietary restrictions, I appreciate that Shawarma Queen offers so many gluten-free and vegetarian options. The falafel plate is my absolute favorite!",
+                author: "Jessica K."
+            }
+        ];
+        
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        
+        function updateTestimonial() {
+            const testimonial = testimonials[currentTestimonial];
+            testimonialElement.innerHTML = `
+                <p>"${testimonial.text}"</p>
+                <div class="author">- ${testimonial.author}</div>
+            `;
+            
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+        
+        // Change testimonial every 5 seconds
+        setInterval(updateTestimonial, 5000);
+    </script>
+</body>
+</html>

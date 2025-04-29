@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shawarma Queen - Authentic Mediterranean cuisine featuring shawarma, kebabs, falafel, and more. Visit us for delicious Middle Eastern food in a welcoming atmosphere.">
+    <meta name="keywords" content="shawarma, kebab, mediterranean food, middle eastern cuisine, donair, falafel, hummus, poutine">
+    <title>Shawarma Queen - Authentic Mediterranean Cuisine</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #C42126;
+            --secondary-color: #F5F5F5;
+            --accent-color: #4CAF50;
+            --dark-text: #333;
+            --light-text: #fff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #9b1a1e;
+            transform: translateY(-3px);
+        }
+        
+        /* Featured Items */
+        .featured {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .item-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .item-content {
+            padding: 20px;
+        }
+        
+        .item-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .dietary-icons {
+            margin-top: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            padding: 30px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info h3, .hours h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Map */
+        .map {
+            width: 100%;
+            height: 400px;
+            margin-top: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--light-text);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                padding: 8px 15px;
+                margin: 3px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/Images/ShawarmaQueenLogo.jpg" alt="Shawarma Queen Logo">
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Shawarma Queen</h1>
+            <p>Experience authentic Mediterranean cuisine featuring the finest shawarma, kebabs, and more!</p>
+            <a href="menu.html" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Items</h2>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="/api/placeholder/400/300" alt="Chicken Shawarma Plate">
+                    <div class="item-content">
+                        <h3>Chicken Shawarma Plate</h3>
+                        <p>Thinly slices of marinated chicken slow cooked on a vertical rotisserie served with rice, fries, and your choice of salad and sauce.</p>
+                        <div class="dietary-icons">
+                            <i class="fas fa-leaf" title="Gluten-free option available"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="/api/placeholder/400/300" alt="Beef Donair Wrap">
+                    <div class="item-content">
+                        <h3>Beef Donair Wrap</h3>
+                        <p>Thinly slices of spiced beef slow cooked on a vertical rotisserie wrapped in your choice of bread with fresh toppings and sauce.</p>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="/api/placeholder/400/300" alt="Falafel Plate">
+                    <div class="item-content">
+                        <h3>Falafel Plate</h3>
+                        <p>8 pieces of falafel made from chickpeas, served with rice, fries, and your choice of salad and sauce.</p>
+                        <div class="dietary-icons">
+                            <i class="fas fa-leaf" title="Vegetarian"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"The best shawarma I've ever had! The meat is always juicy and flavorful, and their homemade sauces are incredible."</p>
+                    <div class="author">- Sarah M.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Shawarma Queen was established with a passion for authentic Mediterranean cuisine. Our recipes have been passed down through generations, bringing the true flavors of the Middle East to your table.</p>
+                    <p>We pride ourselves on using only the freshest ingredients and traditional cooking methods to ensure an authentic and delicious dining experience every time.</p>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/500/300" alt="Shawarma Queen Restaurant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, State ZIP</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@shawarmaqueendonair.com</p>
+                </div>
+                <div class="hours">
+                    <h3>Hours of Operation</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Thursday:</span> <span>11:00 AM - 9:00 PM</span></li>
+                        <li><span>Friday - Saturday:</span> <span>11:00 AM - 10:00 PM</span></li>
+                        <li><span>Sunday:</span> <span>12:00 PM - 8:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map">
+                <iframe
+                  src="https://maps.google.com/maps?q=Shawarma%20Queen%20Brandon%20MB&amp;z=15&amp;output=embed"
+                  width="100%" height="400" frameborder="0" style="border:0;"
+                  allowfullscreen="" loading="lazy">
+                </iframe>
+              </div>
+              
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-yelp"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="order.html">Order Online</a>
+            </div>
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear());</script> Shawarma Queen. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple testimonial slider
+        const testimonials = [
+            {
+                text: "The best shawarma I've ever had! The meat is always juicy and flavorful, and their homemade sauces are incredible.",
+                author: "Sarah M."
+            },
+            {
+                text: "I love the variety of options for vegetarians. The falafel is crispy on the outside and soft on the inside - exactly how it should be!",
+                author: "Michael T."
+            },
+            {
+                text: "Friendly staff and amazing food. Their chicken shawarma poutine is to die for! Will keep coming back again and again.",
+                author: "Jessica K."
+            }
+        ];
+        
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        
+        function updateTestimonial() {
+            const testimonial = testimonials[currentTestimonial];
+            testimonialElement.innerHTML = `
+                <p>"${testimonial.text}"</p>
+                <div class="author">- ${testimonial.author}</div>
+            `;
+            
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+        
+        // Change testimonial every 5 seconds
+        setInterval(updateTestimonial, 5000);
+    </script>
+</body>
+</html>
